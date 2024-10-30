@@ -1,8 +1,10 @@
+import React from "react";
+
 export default function Homepage() {
   return (
     <>
       <nav>
-        <h1>GiftStacks</h1>
+        <h1 className="text-lg">GiftStacks</h1>
 
         <ul>
           <li>Home</li>
