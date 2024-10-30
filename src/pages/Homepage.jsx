@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function Homepage() {
@@ -23,6 +24,7 @@ export default function Homepage() {
           Connect Wallet
         </button>
       </nav>
+      <Outlet />
     </>
   );
 }
