@@ -6,9 +6,11 @@ import { BrowserRouter } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 
 export default function App() {
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Homepage />} />
-    </Routes>
-  </BrowserRouter>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
