@@ -6,7 +6,11 @@ export default {
         primary: "#FFD700",
       },
       fontSize: {
+        13: "1.3rem",
         16: "1.6rem",
+        18: "1.8rem",
+        22: "2.2rem",
+        32: "3.2rem",
       },
     },
   },
