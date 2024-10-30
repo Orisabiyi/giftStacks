@@ -4,6 +4,7 @@ export default {
     extend: {
       colors: {
         primary: "#FFD700",
+        secondary: "#CCAC00",
       },
       fontSize: {
         13: "1.3rem",
