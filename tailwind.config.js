@@ -5,6 +5,9 @@ export default {
       colors: {
         primary: "#FFD700",
       },
+      fontSize: {
+        16: "1.6rem",
+      },
     },
   },
   plugins: [],
