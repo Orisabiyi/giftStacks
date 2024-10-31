@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function LandingPage() {
   return (
     <>
-      <header className="h-screen bg-primary flex flex-col items-center justify-center gap-16">
+      <header className="h-screen bg-primary flex flex-col items-center justify-center gap-16 animated-gradient">
         <h1 className="text-[4rem] text-center uppercase font-semibold w-6/12">
           Effortlessly send tokens and NFTs to friends and family
         </h1>
