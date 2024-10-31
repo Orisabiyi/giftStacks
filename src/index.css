@@ -4,8 +4,8 @@ html {
   font-size: 62.5%;
 }
 
-/* Background animation */
-@keyframes gradient {
+/* Keyframe animation for gradient movement */
+@keyframes pastelGradient {
   0% {
     background-position: 0% 50%;
   }
@@ -17,18 +17,20 @@ html {
   }
 }
 
-/* Applying animated gradient */
+/* Pastel animated gradient with smooth movement */
 .animated-gradient {
   background: linear-gradient(
-    45deg,
-    #ffd700,
-    #ffea80,
-    #ccac00,
-    #ff8c00,
-    #ffec99
+    120deg,
+    #ffe29a,
+    #ffd1a9,
+    #ffc2d1,
+    #b4e1ff,
+    #c8e6c9
   );
-  background-size: 400% 400%;
-  animation: gradient 8s ease infinite;
+  background-size: 300% 300%;
+  animation: pastelGradient 8s ease-in-out infinite;
+  /* Optional: soft glow effect for extra depth */
+  box-shadow: 0 4px 15px rgba(255, 223, 186, 0.3);
 }
 
 textarea {
