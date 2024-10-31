@@ -1,6 +1,12 @@
 import React from "react";
+import { useState } from "react";
 
 export default function GiftPage() {
+  const [recipient, setRecipient] = useState("");
+  const [giftType, setGiftType] = useState("");
+  const [amount, setAmount] = useState("");
+  const [message, setMessage] = useState("");
+
   return (
     <section className="h-screen animated-gradient flex items-center justify-center">
       <form
@@ -13,8 +19,9 @@ export default function GiftPage() {
         <input
           type="text"
           id="recipient-wallet-address"
-          // placeholder="Enter Recipient Wallet Address"
           className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
+          value={recipient}
+          onChange={(e) => setRecipient(e.target.value)}
         />
 
         <label htmlFor="select-gift-type" className="font-medium">
@@ -23,6 +30,8 @@ export default function GiftPage() {
         <select
           id="select-gift-type"
           className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
+          value={giftType}
+          onChange={(e) => setGiftType(e.target.value)}
         >
           <option value="STX Tokens">STX Tokens</option>
           <option value="NFT">NFT</option>
@@ -34,6 +43,8 @@ export default function GiftPage() {
         <textarea
           id="add-personal-message"
           className="mb-6 p-6 outline-none rounded-lg text-16 h-64 bg-white bg-opacity-60"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
         ></textarea>
 
         <button className="bg-secondary py-4 text-white font-semibold rounded-lg">
