@@ -92,6 +92,7 @@ export default function GiftPage() {
               className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
+              required
             />
           </>
         )}
