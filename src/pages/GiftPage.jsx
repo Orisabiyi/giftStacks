@@ -1,8 +1,7 @@
+import React, { useState, useEffect } from "react";
 import { openSTXTransfer } from "@stacks/connect";
-import React from "react";
-import { useState } from "react";
 import { useTransactionStatus } from "../hooks/useTransactionStatus";
-import { useEffect } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 export default function GiftPage() {
   const [recipient, setRecipient] = useState("");
@@ -13,6 +12,7 @@ export default function GiftPage() {
 
   // track transaction and status
   const { trackTransaction, status } = useTransactionStatus();
+  const { curUser } = AuthContext();
 
   useEffect(
     function () {
@@ -31,6 +31,8 @@ export default function GiftPage() {
 
   const handleTransfer = function (e) {
     e.preventDefault();
+
+    if (!curUser) return alert("Connect Your Wallet");
 
     openSTXTransfer({
       recipient,
