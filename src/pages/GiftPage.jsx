@@ -94,7 +94,7 @@ export default function GiftPage() {
         ></textarea>
 
         <button className="bg-blue-700 py-4 text-white font-semibold rounded-lg">
-          Send Gift
+          🎁 Send Gift
         </button>
       </form>
     </section>
