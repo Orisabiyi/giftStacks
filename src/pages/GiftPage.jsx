@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function GuftPage() {
+export default function GiftPage() {
   return <section>Gifting Page</section>;
 }
