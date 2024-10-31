@@ -1,14 +1,29 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function LandingPage() {
   return (
-    <header className="h-screen bg-primary flex flex-col items-center justify-center gap-16">
-      <h1 className="text-[4rem] text-center uppercase font-semibold w-7/12">
-        Effortlessly send tokens and NFTs to friends and family
-      </h1>
-      <button className="text-18 bg-white px-20 py-5 rounded-lg hover:bg-secondary hover:-translate-y-3 hover:text-white hover:font-medium transition-all duration-700">
-        Start Gifting
-      </button>
-    </header>
+    <>
+      <header className="h-screen bg-primary flex flex-col items-center justify-center gap-16">
+        <h1 className="text-[4rem] text-center uppercase font-semibold w-6/12">
+          Effortlessly send tokens and NFTs to friends and family
+        </h1>
+        <button className="text-18 bg-white px-20 py-5 rounded-lg hover:bg-secondary hover:-translate-y-3 hover:text-white hover:font-medium transition-all duration-700">
+          Start Gifting
+        </button>
+      </header>
+
+      <footer className="p-8 flex items-center justify-center gap-16 text-18">
+        <Link className="underline underline-offset-1 hover:underline-offset-2">
+          About
+        </Link>
+        <Link className="underline underline-offset-1 hover:underline-offset-2">
+          FAQ
+        </Link>
+        <Link className="underline underline-offset-1 hover:underline-offset-2">
+          Contact Us
+        </Link>
+      </footer>
+    </>
   );
 }
