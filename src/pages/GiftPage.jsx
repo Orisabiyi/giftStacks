@@ -37,6 +37,15 @@ export default function GiftPage() {
           <option value="NFT">NFT</option>
         </select>
 
+        <label htmlFor="stx-amount">STX Token</label>
+        <input
+          type="number"
+          id="stx-amount"
+          className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+
         <label htmlFor="add-personal-message" className="font-medium">
           Add Personal Message
         </label>
