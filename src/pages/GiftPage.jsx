@@ -14,24 +14,27 @@ export default function GiftPage() {
   // track transaction and status
   const { trackTransaction, status } = useTransactionStatus();
 
-  useEffect(function () {
-    if (status === "pending") return;
+  useEffect(
+    function () {
+      if (status === "pending") return;
 
-    status === "success"
-      ? setStatusMessage("Transaction was Successful")
-      : setStatusMessage("Transaction Failed");
+      status === "success"
+        ? setStatusMessage("Transaction was Successful")
+        : setStatusMessage("Transaction Failed");
 
-    const timer = setTimeout(() => setStatusMessage(""), 5000);
+      const timer = setTimeout(() => setStatusMessage(""), 5000);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    },
+    [status]
+  );
 
   const handleTransfer = function (e) {
     e.preventDefault();
 
     openSTXTransfer({
       recipient,
-      amount: Number(amount) * 1000,
+      amount: Number(amount) * 1000000,
       network: "testnet",
       memo: message || "",
       appDetails: {
@@ -42,6 +45,12 @@ export default function GiftPage() {
         trackTransaction(data.txId);
       },
     });
+
+    // reset values
+    setRecipient("");
+    setGiftType("");
+    setAmount("");
+    setMessage("");
   };
 
   return (
