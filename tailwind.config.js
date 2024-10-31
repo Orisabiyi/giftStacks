@@ -12,6 +12,7 @@ export default {
         18: "1.8rem",
         22: "2.2rem",
         32: "3.2rem",
+        4: "4rem",
       },
     },
   },

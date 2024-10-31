@@ -5,7 +5,7 @@ export default function LandingPage() {
   return (
     <>
       <header className="h-screen bg-primary flex flex-col items-center justify-center gap-16 animated-gradient">
-        <h1 className="text-[4rem] text-center uppercase font-semibold w-6/12">
+        <h1 className="text-4 text-center uppercase font-semibold w-6/12">
           Effortlessly send tokens and NFTs to friends and family
         </h1>
         <button className="text-18 bg-white px-20 py-5 rounded-lg hover:bg-secondary hover:-translate-y-3 hover:text-white hover:font-medium transition-all duration-700">
