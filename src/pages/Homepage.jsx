@@ -10,13 +10,13 @@ export default function Homepage() {
 
         <ul className="flex items-center gap-16 mx-auto">
           <li className="hover:bg-primary hover:px-4 transition-all duration-700">
-            <Link>Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li className="hover:bg-primary hover:px-4 transition-all duration-700">
-            <Link>Gift</Link>
+            <Link to="gift-stacks">Gift</Link>
           </li>
           <li className="hover:bg-primary hover:px-4 transition-all duration-700">
-            <Link>My Gifts</Link>
+            <Link to="my-gifts">My Gifts</Link>
           </li>
         </ul>
 
