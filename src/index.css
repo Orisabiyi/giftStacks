@@ -3,3 +3,30 @@
 html {
   font-size: 62.5%;
 }
+
+/* Background animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Applying animated gradient */
+.animated-gradient {
+  background: linear-gradient(
+    45deg,
+    #ffd700,
+    #ffea80,
+    #ccac00,
+    #ff8c00,
+    #ffec99
+  );
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+}
