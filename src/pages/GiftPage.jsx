@@ -31,7 +31,7 @@ export default function GiftPage() {
 
     openSTXTransfer({
       recipient,
-      amount,
+      amount: Number(amount) * 1000,
       network: "testnet",
       memo: message || "",
       appDetails: {
