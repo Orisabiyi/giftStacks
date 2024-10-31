@@ -30,3 +30,10 @@ html {
   background-size: 400% 400%;
   animation: gradient 8s ease infinite;
 }
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+}
