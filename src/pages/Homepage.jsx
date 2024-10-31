@@ -2,9 +2,11 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Homepage() {
   const { pathname } = useLocation();
+  const { handleAuthenticate, curUser } = AuthContext();
 
   return (
     <>
@@ -37,8 +39,12 @@ export default function Homepage() {
           </li>
         </ul>
 
-        <button className="bg-blue-700 text-white font-medium px-8 py-4 rounded-xl">
-          Connect Wallet
+        <button
+          className="bg-blue-700 text-white font-medium px-8 py-4 rounded-xl"
+          onClick={handleAuthenticate}
+        >
+          {curUser && curUser.slice(0, 16) + "...."}
+          {!curUser && "Connect Wallet"}
         </button>
       </nav>
       <Outlet />
