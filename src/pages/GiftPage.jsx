@@ -1,3 +1,4 @@
+import { openSTXTransfer } from "@stacks/connect";
 import React from "react";
 import { useState } from "react";
 
@@ -7,11 +8,30 @@ export default function GiftPage() {
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
 
+  const handleTransfer = function (e) {
+    e.preventDefault();
+
+    openSTXTransfer({
+      recipient,
+      amount,
+      network: "testnet",
+      appDetails: {
+        name: "/GiftStacks/",
+      },
+
+      onFinish: function (data) {
+        console.log("Stacks Transaction", data.stacksTransaction);
+        console.log("Tranaction ID", data.txId);
+      },
+    });
+  };
+
   return (
-    <section className="h-screen animated-gradient flex items-center justify-center">
+    <section className="min-h-screen animated-gradient flex items-center justify-center">
       <form
         action=""
         className="flex flex-col items-stretch gap-3 w-2/5 text-18"
+        onSubmit={handleTransfer}
       >
         <label htmlFor="recipient-wallet-address" className="font-medium">
           Recipient Wallet Address
