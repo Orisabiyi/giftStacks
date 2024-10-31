@@ -1,12 +1,15 @@
 import { openSTXTransfer } from "@stacks/connect";
 import React from "react";
 import { useState } from "react";
+import { useTransactionStatus } from "../hooks/useTransactionStatus";
 
 export default function GiftPage() {
   const [recipient, setRecipient] = useState("");
   const [giftType, setGiftType] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
+
+  const { trackTransaction, status } = useTransactionStatus();
 
   const handleTransfer = function (e) {
     e.preventDefault();
@@ -15,19 +18,26 @@ export default function GiftPage() {
       recipient,
       amount,
       network: "testnet",
+      memo: message || "",
       appDetails: {
         name: "/GiftStacks/",
       },
 
       onFinish: function (data) {
-        console.log("Stacks Transaction", data.stacksTransaction);
-        console.log("Tranaction ID", data.txId);
+        trackTransaction(data.txId);
       },
     });
   };
 
   return (
-    <section className="min-h-screen animated-gradient flex items-center justify-center">
+    <section className="min-h-screen animated-gradient px-20 flex flex-col items-center justify-center gap-8">
+      {status !== "pending" && (
+        <p className="self-end px-4 py-2 bg-blue-700 text-white text-13 text-center border-t-4 border-t-white">
+          {status === "success"
+            ? "Transaction was successful"
+            : "Transaction Failed"}
+        </p>
+      )}
       <form
         action=""
         className="flex flex-col items-stretch gap-3 w-2/5 text-18"
@@ -42,6 +52,7 @@ export default function GiftPage() {
           className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
           value={recipient}
           onChange={(e) => setRecipient(e.target.value)}
+          required
         />
 
         <label htmlFor="select-gift-type" className="font-medium">
@@ -52,6 +63,7 @@ export default function GiftPage() {
           className="mb-6 p-6 outline-none rounded-lg text-16 bg-white bg-opacity-60"
           value={giftType}
           onChange={(e) => setGiftType(e.target.value)}
+          required
         >
           <option value=""></option>
           <option value="STX Tokens">STX Tokens</option>
