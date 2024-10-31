@@ -10,7 +10,7 @@ export default function Homepage() {
 
   return (
     <>
-      <nav className="flex items-center px-20 py-10 text-16">
+      <nav className="flex items-center px-20 py-10 text-18">
         <h1 className="text-22 font-medium">/GiftStacks/</h1>
 
         <ul className="flex items-center gap-16 mx-auto">
@@ -29,13 +29,6 @@ export default function Homepage() {
             }`}
           >
             <Link to="gift-stacks">Gift</Link>
-          </li>
-          <li
-            className={`hover:bg-blue-700 hover:px-4 transition-all duration-700 ${
-              pathname.includes("my-gifts") ? "bg-blue-700 text-white px-4" : ""
-            }`}
-          >
-            <Link to="my-gifts">My Gifts</Link>
           </li>
         </ul>
 
