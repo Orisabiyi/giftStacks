@@ -61,7 +61,7 @@ export default function GiftPage() {
           onChange={(e) => setMessage(e.target.value)}
         ></textarea>
 
-        <button className="bg-secondary py-4 text-white font-semibold rounded-lg">
+        <button className="bg-blue-700 py-4 text-white font-semibold rounded-lg">
           Send Gift
         </button>
       </form>
