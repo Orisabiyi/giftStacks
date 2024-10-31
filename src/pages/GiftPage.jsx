@@ -2,14 +2,29 @@ import { openSTXTransfer } from "@stacks/connect";
 import React from "react";
 import { useState } from "react";
 import { useTransactionStatus } from "../hooks/useTransactionStatus";
+import { useEffect } from "react";
 
 export default function GiftPage() {
   const [recipient, setRecipient] = useState("");
   const [giftType, setGiftType] = useState("");
   const [amount, setAmount] = useState("");
   const [message, setMessage] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
 
+  // track transaction and status
   const { trackTransaction, status } = useTransactionStatus();
+
+  useEffect(function () {
+    if (status === "pending") return;
+
+    status === "success"
+      ? setStatusMessage("Transaction was Successful")
+      : setStatusMessage("Transaction Failed");
+
+    const timer = setTimeout(() => setStatusMessage(""), 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleTransfer = function (e) {
     e.preventDefault();
@@ -33,9 +48,7 @@ export default function GiftPage() {
     <section className="min-h-screen animated-gradient px-20 flex flex-col items-center justify-center gap-8">
       {status !== "pending" && (
         <p className="self-end px-4 py-2 bg-blue-700 text-white text-13 text-center border-t-4 border-t-white">
-          {status === "success"
-            ? "Transaction was successful"
-            : "Transaction Failed"}
+          {statusMessage}
         </p>
       )}
       <form
