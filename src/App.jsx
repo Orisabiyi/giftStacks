@@ -12,6 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Homepage />}>
           <Route index element={<LandingPage />} />
+          <Route path="gift-stacks" element={<LandingPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
