@@ -1,1 +1,48 @@
-@import "src/styles/tailwind.css";
+@import "./styles/tailwind.css";
+
+html {
+  font-size: 62.5%;
+}
+
+/* Keyframe animation for gradient movement */
+@keyframes pastelGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pastel animated gradient with smooth movement */
+.animated-gradient {
+  background: linear-gradient(
+    120deg,
+    #ffe29a,
+    #ffd1a9,
+    #ffc2d1,
+    #b4e1ff,
+    #c8e6c9
+  );
+  background-size: 300% 300%;
+  animation: pastelGradient 8s ease-in-out infinite;
+  /* Optional: soft glow effect for extra depth */
+  box-shadow: 0 4px 15px rgba(255, 223, 186, 0.3);
+}
+
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  resize: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
